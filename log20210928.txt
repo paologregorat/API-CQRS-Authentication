@@ -1,0 +1,119 @@
+2021-09-28 09:29:12.191 +02:00 [INF] Start API
+2021-09-28 09:29:24.260 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCorsiController+<Post>d__4.MoveNext
+2021-09-28 09:29:33.610 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCorsiController+<GetUtentiCorso>d__7.MoveNext
+2021-09-28 11:07:59.717 +02:00 [INF] Start API
+2021-09-28 11:08:34.954 +02:00 [INF] WebAPI_CQRS.Controllers.CalendariCorsiController - Start:  WebAPI_CQRS.Controllers.CalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:08:36.549 +02:00 [INF] WebAPI_CQRS.Controllers.CalendariCorsiController - Start:  WebAPI_CQRS.Controllers.CalendariCorsiController+<GetAll>d__2.MoveNext 42P01: relation "CalenariCorsi" does not exist
+2021-09-28 11:09:24.650 +02:00 [INF] Start API
+2021-09-28 11:09:31.040 +02:00 [INF] WebAPI_CQRS.Controllers.CalendariCorsiController - Start:  WebAPI_CQRS.Controllers.CalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:11:29.843 +02:00 [INF] WebAPI_CQRS.Controllers.CalendariCorsiController - Start:  WebAPI_CQRS.Controllers.CalendariCorsiController+<Post>d__4.MoveNext
+2021-09-28 11:11:30.118 +02:00 [INF] WebAPI_CQRS.Controllers.CalendariCorsiController - Start:  WebAPI_CQRS.Controllers.CalendariCorsiController+<Post>d__4.MoveNext One or more errors occurred. ('"' is invalid after a value. Expected either ',', '}', or ']'. LineNumber: 5 | BytePositionInLine: 4.)System.Text.Json.JsonReaderException: '"' is invalid after a value. Expected either ',', '}', or ']'. LineNumber: 5 | BytePositionInLine: 4.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ConsumeNextToken(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ConsumeNextTokenOrRollback(Byte marker)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.JsonDocument.Parse(ReadOnlySpan`1 utf8JsonSpan, Utf8JsonReader reader, MetadataDb& database, StackRowStack& stack)
+   at System.Text.Json.JsonDocument.Parse(ReadOnlyMemory`1 utf8Json, JsonReaderOptions readerOptions, Byte[] extraRentedBytes)
+   at System.Text.Json.JsonDocument.ParseAsyncCore(Stream utf8Json, JsonDocumentOptions options, CancellationToken cancellationToken)
+   at WebAPI_CQRS.Controllers.WebControllerBase.JsonBody() in C:\Personale\Progetti\SunshineWebAPI\Controllers\WebControllerBase.cs:line 15
+2021-09-28 11:11:42.483 +02:00 [INF] WebAPI_CQRS.Controllers.CalendariCorsiController - Start:  WebAPI_CQRS.Controllers.CalendariCorsiController+<Post>d__4.MoveNext
+2021-09-28 11:11:42.793 +02:00 [INF] WebAPI_CQRS.Controllers.CalendariCorsiController - Start:  WebAPI_CQRS.Controllers.CalendariCorsiController+<Post>d__4.MoveNext An error occurred while updating the entries. See the inner exception for details.Npgsql.PostgresException (0x80004005): 23502: null value in column "Data" of relation "CalendariCorsi" violates not-null constraint
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23502
+    MessageText: null value in column "Data" of relation "CalendariCorsi" violates not-null constraint
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: CalendariCorsi
+    ColumnName: Data
+    File: execMain.c
+    Line: 1965
+    Routine: ExecConstraints
+2021-09-28 11:15:47.675 +02:00 [INF] Start API
+2021-09-28 11:16:02.047 +02:00 [INF] WebAPI_CQRS.Controllers.CalendariCorsiController - Start:  WebAPI_CQRS.Controllers.CalendariCorsiController+<Post>d__4.MoveNext
+2021-09-28 11:16:11.621 +02:00 [INF] WebAPI_CQRS.Controllers.CalendariCorsiController - Start:  WebAPI_CQRS.Controllers.CalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:40:13.952 +02:00 [INF] Start API
+2021-09-28 11:40:48.154 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:40:49.650 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext Object reference not set to an instance of an object.
+2021-09-28 11:43:19.522 +02:00 [INF] Start API
+2021-09-28 11:44:00.377 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:44:01.877 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext Object reference not set to an instance of an object.
+2021-09-28 11:44:18.460 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:47:27.949 +02:00 [INF] Start API
+2021-09-28 11:47:41.529 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:47:45.371 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext Object reference not set to an instance of an object.
+2021-09-28 11:48:53.049 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:49:24.301 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext Object reference not set to an instance of an object.
+2021-09-28 11:49:29.385 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:49:56.065 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext Object reference not set to an instance of an object.
+2021-09-28 11:50:01.258 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:52:02.378 +02:00 [INF] Start API
+2021-09-28 11:52:12.424 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:55:40.530 +02:00 [INF] Start API
+2021-09-28 11:55:55.430 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:56:00.791 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext Object reference not set to an instance of an object.
+2021-09-28 11:56:05.751 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 11:56:47.623 +02:00 [INF] Start API
+2021-09-28 11:56:56.948 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 14:48:01.782 +02:00 [INF] Start API
+2021-09-28 14:48:28.102 +02:00 [INF] WebAPI_CQRS.Controllers.OperatoriController - Start:  WebAPI_CQRS.Controllers.OperatoriController.Logon
+2021-09-28 14:48:47.133 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-28 15:51:06.492 +02:00 [INF] Start API
+2021-09-28 15:51:51.750 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 15:51:53.133 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext 42703: column u.CorsoID does not exist
+2021-09-28 15:57:50.233 +02:00 [INF] Start API
+2021-09-28 15:58:06.989 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 15:58:54.096 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext 42703: column u.CorsoID does not exist
+2021-09-28 15:59:02.685 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:00:40.681 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext 42703: column u.CorsoID does not exist
+2021-09-28 16:00:49.957 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:01:15.965 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext 42703: column u.CorsoID does not exist
+2021-09-28 16:01:30.726 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:03:20.420 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext 42703: column u.CorsoID does not exist
+2021-09-28 16:05:19.159 +02:00 [INF] Start API
+2021-09-28 16:05:28.511 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:05:59.434 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext 42703: column u.CorsoID does not exist
+2021-09-28 16:06:07.674 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:06:41.583 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext 42703: column u.CorsoID does not exist
+2021-09-28 16:06:59.040 +02:00 [INF] Start API
+2021-09-28 16:07:11.900 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:08:19.387 +02:00 [INF] Start API
+2021-09-28 16:08:26.268 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:08:33.636 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext 42703: column u.CorsoID does not exist
+2021-09-28 16:16:20.173 +02:00 [INF] Start API
+2021-09-28 16:16:28.272 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:19:00.156 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<Post>d__4.MoveNext
+2021-09-28 16:19:07.651 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:19:12.804 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext Object reference not set to an instance of an object.
+2021-09-28 16:19:22.652 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:19:26.657 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext Object reference not set to an instance of an object.
+2021-09-28 16:19:51.708 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:21:35.085 +02:00 [INF] Start API
+2021-09-28 16:21:45.230 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetAll>d__2.MoveNext
+2021-09-28 16:23:47.797 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtenteCalendariCorsi>d__6.MoveNext
+2021-09-28 16:23:47.870 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtenteCalendariCorsi>d__6.MoveNext Object reference not set to an instance of an object.
+2021-09-28 16:24:49.631 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtenteCalendariCorsi>d__6.MoveNext
+2021-09-28 16:26:03.877 +02:00 [INF] Start API
+2021-09-28 16:26:15.741 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtenteCalendariCorsi>d__6.MoveNext
+2021-09-28 16:27:38.917 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtentiCalendarioCorso>d__7.MoveNext
+2021-09-28 16:27:38.971 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtentiCalendarioCorso>d__7.MoveNext Object reference not set to an instance of an object.
+2021-09-28 16:27:51.474 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtentiCalendarioCorso>d__7.MoveNext
+2021-09-28 16:28:10.837 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtentiCalendarioCorso>d__7.MoveNext Object reference not set to an instance of an object.
+2021-09-28 16:28:15.685 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtentiCalendarioCorso>d__7.MoveNext
+2021-09-28 16:28:41.090 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtentiCalendarioCorso>d__7.MoveNext Object reference not set to an instance of an object.
+2021-09-28 16:28:49.718 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtentiCalendarioCorso>d__7.MoveNext
+2021-09-28 16:29:44.256 +02:00 [INF] Start API
+2021-09-28 16:29:50.806 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<GetUtentiCalendarioCorso>d__7.MoveNext
+2021-09-28 16:30:47.906 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCorsiController+<GetUtentiCorso>d__7.MoveNext
+2021-09-28 16:30:59.393 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCorsiController+<GetAll>d__2.MoveNext

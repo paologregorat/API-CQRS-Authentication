@@ -1,0 +1,18 @@
+2021-09-15 12:11:03.394 +02:00 [INF] Start API
+2021-09-15 12:15:49.497 +02:00 [INF] Start API
+2021-09-15 12:18:40.794 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - MoveNext
+2021-09-15 12:21:13.704 +02:00 [INF] Start API
+2021-09-15 12:23:31.233 +02:00 [INF] Start API
+2021-09-15 12:31:27.761 +02:00 [INF] Start API
+2021-09-15 12:31:51.596 +02:00 [INF] WebAPI_CQRS.Controllers.OperatoriController - WebAPI_CQRS.Controllers.OperatoriController.Logon
+2021-09-15 12:32:09.038 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-15 14:16:13.681 +02:00 [INF] Start API
+2021-09-15 14:20:23.438 +02:00 [INF] Start API
+2021-09-15 14:20:42.521 +02:00 [INF] WebAPI_CQRS.Controllers.OperatoriController - WebAPI_CQRS.Controllers.OperatoriController.Logon
+2021-09-15 14:23:41.606 +02:00 [INF] Start API
+2021-09-15 14:24:05.572 +02:00 [INF] WebAPI_CQRS.Controllers.CorsiController - Start:  WebAPI_CQRS.Controllers.CorsiController+<GetAll>d__2.MoveNext
+2021-09-15 14:37:37.983 +02:00 [INF] Start API
+2021-09-15 14:41:40.237 +02:00 [INF] Start API
+2021-09-15 14:45:52.876 +02:00 [INF] Start API
+2021-09-15 15:06:46.836 +02:00 [INF] Start API
+2021-09-15 15:16:41.597 +02:00 [INF] Start API

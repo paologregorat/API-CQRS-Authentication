@@ -1,0 +1,25 @@
+2021-09-22 10:28:35.409 +02:00 [INF] Start API
+2021-09-22 10:29:51.741 +02:00 [INF] WebAPI_CQRS.Controllers.OperatoriController - Start:  WebAPI_CQRS.Controllers.OperatoriController.Logon
+2021-09-22 10:30:21.559 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<GetAll>d__2.MoveNext
+2021-09-22 10:30:42.069 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 10:30:42.225 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext One or more errors occurred. (The JSON object contains a trailing comma at the end which is not supported in this mode. Change the reader options. LineNumber: 3 | BytePositionInLine: 0.)
+2021-09-22 10:30:52.939 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 10:30:57.729 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<GetAll>d__2.MoveNext
+2021-09-22 10:52:57.942 +02:00 [INF] Start API
+2021-09-22 10:54:16.802 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 10:54:46.532 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 10:54:52.363 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<GetAll>d__2.MoveNext
+2021-09-22 10:59:15.322 +02:00 [INF] Start API
+2021-09-22 10:59:34.498 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 10:59:34.649 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext One or more errors occurred. (The JSON object contains a trailing comma at the end which is not supported in this mode. Change the reader options. LineNumber: 3 | BytePositionInLine: 0.)
+2021-09-22 10:59:38.933 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 10:59:40.665 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext Value cannot be null. (Parameter 'content')
+2021-09-22 11:03:18.644 +02:00 [INF] Start API
+2021-09-22 11:03:41.383 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 11:03:53.604 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<GetAll>d__2.MoveNext
+2021-09-22 11:04:47.677 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 11:05:19.648 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 11:11:02.661 +02:00 [INF] Start API
+2021-09-22 11:33:29.935 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Post>d__4.MoveNext
+2021-09-22 11:38:34.485 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<Put>d__5.MoveNext
+2021-09-22 11:39:02.532 +02:00 [INF] WebAPI_CQRS.Controllers.StruttureController - Start:  WebAPI_CQRS.Controllers.StruttureController+<GetAll>d__2.MoveNext
