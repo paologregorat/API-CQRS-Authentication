@@ -6,6 +6,7 @@ using WebAPI_CQRS.Business.Abstract;
 using WebAPI_CQRS.Domain.Commands.Command;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Infrastructure;
+using WebAPI_CQRS.Domain.Infrastructure.Commons;
 using WebAPI_CQRS.Domain.Queries.Serializer.UtentiCalendariCorsi;
 using WebAPI_CQRS.Infrastructure.Event;
 
@@ -93,6 +94,21 @@ namespace WebAPI_CQRS.Business.UtentiCalendariCorsi
             {
                 Success = false
             };
+            
+            if (Validator<Domain.Entity.UtenteCalendarioCorso>.CheckEntity(e =>
+            {
+                if (e.UtenteID == null || e.CalendarioCorsoID == null)
+                {
+                    return false;
+                }
+
+                return true;
+            }, command.UtenteCalendarioCorso) == false)
+            {
+                response.Success = false;
+                response.Message ="UtenteID e CalendarioCorsoID obbligatori";
+                return response;
+            }
             
             var toUpdate = _context.UtentiCalendariCorsi.FirstOrDefault(e => e.ID == command.UtenteCalendarioCorso.ID);
             if (toUpdate == default)

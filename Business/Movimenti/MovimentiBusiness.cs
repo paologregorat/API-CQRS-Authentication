@@ -6,6 +6,7 @@ using WebAPI_CQRS.Business.Abstract;
 using WebAPI_CQRS.Domain.Commands.Command;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Infrastructure;
+using WebAPI_CQRS.Domain.Infrastructure.Commons;
 using WebAPI_CQRS.Domain.Queries.Serializer.Movimenti;
 using WebAPI_CQRS.Infrastructure.Event;
 
@@ -40,6 +41,22 @@ namespace WebAPI_CQRS.Business.Movimenti
             {
                 Success = false
             };
+            
+            if (Validator<Movimento>.CheckEntity(e =>
+            {
+                if (string.IsNullOrEmpty(e.Descrizione) ||
+                    e.TipoMovimentoID == null)
+                {
+                    return false;
+                }
+
+                return true;
+            }, command.Movimento) == false)
+            {
+                response.Success = false;
+                response.Message ="Descrizione e tipo movimento obbligatori";
+                return response;
+            }
             
             var toUpdate = _context.Movimenti.FirstOrDefault(e => e.ID == command.Movimento.ID);
             if (toUpdate == default)

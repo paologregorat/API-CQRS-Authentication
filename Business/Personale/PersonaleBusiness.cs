@@ -5,6 +5,7 @@ using WebAPI_CQRS.Business.Abstract;
 using WebAPI_CQRS.Domain.Commands.Command;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Infrastructure;
+using WebAPI_CQRS.Domain.Infrastructure.Commons;
 using WebAPI_CQRS.Domain.Queries.Serializer.Utenti;
 
 namespace WebAPI_CQRS.Business.Personale
@@ -36,6 +37,22 @@ namespace WebAPI_CQRS.Business.Personale
             {
                 Success = false
             };
+            
+            if (Validator<Domain.Entity.Personale>.CheckEntity(e =>
+            {
+                if (string.IsNullOrEmpty(e.Cognome) ||
+                    string.IsNullOrEmpty(e.Nome))
+                {
+                    return false;
+                }
+
+                return true;
+            }, command.Personale) == false)
+            {
+                response.Success = false;
+                response.Message ="Cognome e nome obbligatori";
+                return response;
+            }
             
             var toUpdate = _context.Personale.FirstOrDefault(e => e.ID == command.Personale.ID);
             if (toUpdate == default)

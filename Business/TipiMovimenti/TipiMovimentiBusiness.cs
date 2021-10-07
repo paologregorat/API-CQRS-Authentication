@@ -5,6 +5,7 @@ using WebAPI_CQRS.Business.Abstract;
 using WebAPI_CQRS.Domain.Commands.Command;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Infrastructure;
+using WebAPI_CQRS.Domain.Infrastructure.Commons;
 using WebAPI_CQRS.Domain.Queries.Serializer.TipiMovimenti;
 using WebAPI_CQRS.Domain.Queries.Serializer.Utenti;
 
@@ -37,6 +38,21 @@ namespace WebAPI_CQRS.Business.TipiMovimenti
             {
                 Success = false
             };
+            
+            if (Validator<Domain.Entity.TipoMovimento>.CheckEntity(e =>
+            {
+                if (string.IsNullOrEmpty(e.Tipo))
+                {
+                    return false;
+                }
+
+                return true;
+            }, command.TipoMovimento) == false)
+            {
+                response.Success = false;
+                response.Message ="Tipo obbligatorio";
+                return response;
+            }
            
             var toUpdate = _context.TipiMovimenti.FirstOrDefault(e => e.ID == command.TipoMovimento.ID);
             if (toUpdate == default)

@@ -6,6 +6,7 @@ using WebAPI_CQRS.Business.Abstract;
 using WebAPI_CQRS.Domain.Commands.Command;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Infrastructure;
+using WebAPI_CQRS.Domain.Infrastructure.Commons;
 using WebAPI_CQRS.Domain.Queries.Serializer.Corsi;
 using WebAPI_CQRS.Domain.Queries.Serializer.Strutture;
 using WebAPI_CQRS.Domain.Queries.Serializer.Utenti;
@@ -39,6 +40,21 @@ namespace WebAPI_CQRS.Business.Strutture
             {
                 Success = false
             };
+            
+            if (Validator<Domain.Entity.Struttura>.CheckEntity(e =>
+            {
+                if (string.IsNullOrEmpty(e.Nome))
+                {
+                    return false;
+                }
+
+                return true;
+            }, command.Struttura) == false)
+            {
+                response.Success = false;
+                response.Message ="Nome obbligatorio";
+                return response;
+            }
             
             var toUpdate = _context.Strutture.FirstOrDefault(e => e.ID == command.Struttura.ID);
             if (toUpdate == default)

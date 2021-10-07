@@ -5,6 +5,7 @@ using WebAPI_CQRS.Business.Abstract;
 using WebAPI_CQRS.Domain.Commands.Command;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Infrastructure;
+using WebAPI_CQRS.Domain.Infrastructure.Commons;
 using WebAPI_CQRS.Domain.Queries.Serializer.Corsi;
 using WebAPI_CQRS.Domain.Queries.Serializer.TipiCorsi;
 using WebAPI_CQRS.Domain.Queries.Serializer.Utenti;
@@ -38,6 +39,21 @@ namespace WebAPI_CQRS.Business.TipiCorsi
             {
                 Success = false
             };
+            
+            if (Validator<Domain.Entity.TipoCorso>.CheckEntity(e =>
+            {
+                if (string.IsNullOrEmpty(e.Tipo))
+                {
+                    return false;
+                }
+
+                return true;
+            }, command.TipoCorso) == false)
+            {
+                response.Success = false;
+                response.Message ="Tipo obbligatorio";
+                return response;
+            }
             
             var toUpdate = _context.TipiCorsi.FirstOrDefault(e => e.ID == command.TipoCorso.ID);
             if (toUpdate == default)

@@ -6,6 +6,7 @@ using WebAPI_CQRS.Business.Abstract;
 using WebAPI_CQRS.Domain.Commands.Command;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Infrastructure;
+using WebAPI_CQRS.Domain.Infrastructure.Commons;
 using WebAPI_CQRS.Domain.Queries.Serializer.UtentiCorsi;
 
 //using System.Data.Entity;
@@ -62,6 +63,21 @@ namespace WebAPI_CQRS.Business.UtentiCorsi
             {
                 Success = false
             };
+            
+            if (Validator<Domain.Entity.UtenteCorso>.CheckEntity(e =>
+            {
+                if (e.UtenteID == null || e.CorsoID == null)
+                {
+                    return false;
+                }
+
+                return true;
+            }, command.UtenteCorso) == false)
+            {
+                response.Success = false;
+                response.Message ="UtenteID e CorsoID obbligatori";
+                return response;
+            }
             
             var toUpdate = _context.UtentiCorsi.FirstOrDefault(e => e.ID == command.UtenteCorso.ID);
             if (toUpdate == default)
