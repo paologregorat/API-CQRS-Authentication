@@ -1,0 +1,9 @@
+2021-10-04 16:30:47.136 +02:00 [INF] Start API
+2021-10-04 16:31:15.461 +02:00 [INF] Start API
+2021-10-04 16:31:45.025 +02:00 [INF] Start API
+2021-10-04 16:32:08.883 +02:00 [INF] Start API
+2021-10-04 16:35:12.556 +02:00 [INF] Start API
+2021-10-04 16:36:00.813 +02:00 [INF] Start API
+2021-10-04 16:36:59.858 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<Post>d__4.MoveNext
+2021-10-04 16:38:09.673 +02:00 [INF] Start API
+2021-10-04 16:38:26.857 +02:00 [INF] WebAPI_CQRS.Controllers.UtentiCalendariCorsiController - Start:  WebAPI_CQRS.Controllers.UtentiCalendariCorsiController+<Post>d__4.MoveNext

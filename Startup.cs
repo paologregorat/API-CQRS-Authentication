@@ -43,6 +43,7 @@ using WebAPI_CQRS.Domain.Queries.Serializer.TipiMovimenti;
 using WebAPI_CQRS.Domain.Queries.Serializer.Utenti;
 using WebAPI_CQRS.Domain.Queries.Serializer.UtentiCalendariCorsi;
 using WebAPI_CQRS.Domain.Queries.Serializer.UtentiCorsi;
+using WebAPI_CQRS.Infrastructure.Event;
 
 namespace WebAPI_CQRS
 {
@@ -166,6 +167,7 @@ namespace WebAPI_CQRS
                     }
                 });
 
+                EventsHandler.RegisterEvents();
                 //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 //c.IncludeXmlComments(xmlPath);

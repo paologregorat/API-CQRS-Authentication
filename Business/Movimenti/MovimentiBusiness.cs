@@ -7,6 +7,7 @@ using WebAPI_CQRS.Domain.Commands.Command;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Infrastructure;
 using WebAPI_CQRS.Domain.Queries.Serializer.Movimenti;
+using WebAPI_CQRS.Infrastructure.Event;
 
 //using System.Data.Entity;
 
@@ -56,5 +57,14 @@ namespace WebAPI_CQRS.Business.Movimenti
             
             return response;
         }
+        
+        //contabilizza partecipazione al corso
+        public static void ContabilizzaPartecipazioneCorso(object source, UtentiEventHandler.MyEventArgs e)
+        {
+            var utente = e.GetInfo();
+            var context = e.GetContext();
+            Console.WriteLine("ContabilizzaPartecipazioneCorso eseguita");
+        }
+        
     }
 }

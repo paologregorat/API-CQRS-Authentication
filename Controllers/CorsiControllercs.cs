@@ -102,13 +102,7 @@ namespace WebAPI_CQRS.Controllers
                     item.ID = response.ID;
                     return Ok(item.ID);
                 }
-                // an example of what might have gone wrong
-                var message = new HttpResponseMessage(HttpStatusCode.InternalServerError)
-                {
-                    Content = new StringContent(response.Message),
-                    ReasonPhrase = "InternalServerError"
-                };
-                throw new Exception(message.ToString());
+                throw new Exception(response.Message);
             }
             catch (Exception e)
             {
@@ -140,13 +134,7 @@ namespace WebAPI_CQRS.Controllers
                     item.ID = response.ID;
                     return Ok(item.ID);
                 }
-                // an example of what might have gone wrong
-                var message = new HttpResponseMessage(HttpStatusCode.InternalServerError)
-                {
-                    Content = new StringContent(response.Message),
-                    ReasonPhrase = "InternalServerError"
-                };
-                throw new Exception(message.ToString());
+                throw new Exception(response.Message);
             }
             catch (Exception e)
             {

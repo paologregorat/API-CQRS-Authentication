@@ -94,7 +94,8 @@ namespace WebAPI_CQRS.Controllers
                 var note = (string?) body.Note;
                 var scadenzaCertificato = (DateTime?) body.ScadenzaCertificato;
                 var tesseraPagata = (bool?) body.TesseraPagata;
-                Utente item = new Utente(id, nome, cognome,scadenzaCertificato, tesseraPagata,  note);
+                var tessera = (string?) body.Tessera;
+                Utente item = new Utente(id, nome, cognome,scadenzaCertificato, tessera, tesseraPagata,  note);
                 var command = new SaveUtenteCommand(item);
           
                 var handler = UtenteCommandHandlerFactory.Build(command, _business);
@@ -104,13 +105,7 @@ namespace WebAPI_CQRS.Controllers
                     item.ID = response.ID;
                     return Ok(item.ID);
                 }
-                // an example of what might have gone wrong
-                var message = new HttpResponseMessage(HttpStatusCode.InternalServerError)
-                {
-                    Content = new StringContent(response.Message),
-                    ReasonPhrase = "InternalServerError"
-                };
-                throw new Exception(message.ToString());
+                throw new Exception(response.Message);
             }
             catch (Exception e)
             {
@@ -134,7 +129,8 @@ namespace WebAPI_CQRS.Controllers
                 var note = (string?) body.Note;
                 var scadenzaCertificato = (DateTime?) body.ScadenzaCertificato;
                 var tesseraPagata = (bool?) body.TesseraPagata;
-                Utente item = new Utente(id, nome, cognome,scadenzaCertificato, tesseraPagata,  note);
+                var tessera = (string?) body.Tessera;
+                Utente item = new Utente(id, nome, cognome,scadenzaCertificato, tessera,tesseraPagata,  note);
                 var command = new SaveUtenteCommand(item);
           
                 var handler = UtenteCommandHandlerFactory.Build(command, _business);
@@ -144,13 +140,39 @@ namespace WebAPI_CQRS.Controllers
                     item.ID = response.ID;
                     return Ok(item.ID);
                 }
-                // an example of what might have gone wrong
-                var message = new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                throw new Exception(response.Message);
+            }
+            catch (Exception e)
+            {
+                LogError(origin, e.Message + e.InnerException);
+                return BadRequest(e.Message + e.InnerException);
+            }
+        }
+        
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("v1/utenti/checkutente")]
+        public async Task<IActionResult> CheckUtente(Guid id)
+        {
+            var origin = string.Format("{0}.{1}", MethodBase.GetCurrentMethod()?.DeclaringType.FullName, MethodBase.GetCurrentMethod()?.Name);
+            try
+            {
+                LogAccess(origin);
+                var body = JsonBody().Result;
+                var tessera = (string?) body.Tessera;
+                
+                var command = new CheckUtenteCommand(tessera);
+          
+                var handler = UtenteCommandHandlerFactory.Build(command, _business);
+                var response = handler.Execute();
+                if (response.Success)
                 {
-                    Content = new StringContent(response.Message),
-                    ReasonPhrase = "InternalServerError"
-                };
-                throw new Exception(message.ToString());
+                    return Ok("Tessera abilitata");
+                }
+                else
+                {
+                    return BadRequest("Tessera non abilitata: " + response.Message);
+                }
             }
             catch (Exception e)
             {

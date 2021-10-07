@@ -11,5 +11,10 @@ namespace WebAPI_CQRS.Domain.Commands.Handler.Utenti
         {
             return new SaveUtenteCommandHandler(command, business);
         }
+        
+        public static ICommandHandler<CheckUtenteCommand, CommandResponse> Build(CheckUtenteCommand command, UtentiBusiness business)
+        {
+            return new CheckUtenteCommandHandler(command, business);
+        }
     }
 }

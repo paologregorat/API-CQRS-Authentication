@@ -7,6 +7,7 @@ using WebAPI_CQRS.Domain.Commands.Command;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Infrastructure;
 using WebAPI_CQRS.Domain.Queries.Serializer.UtentiCalendariCorsi;
+using WebAPI_CQRS.Infrastructure.Event;
 
 //using System.Data.Entity;
 
@@ -14,9 +15,12 @@ namespace WebAPI_CQRS.Business.UtentiCalendariCorsi
 {
     public class UtentiCalendariCorsiBusiness: IUtentiCalendariCorsiBusiness
     {
+        public event UtentiEventHandler.MyUtenteEventHandler OnUtentePartecipaAlCorso;
+        
         private UtenteCalendarioCorsoSerializer _serializer;
         private SunshineContext _context;
 
+        public UtentiCalendariCorsiBusiness() {}
         public UtentiCalendariCorsiBusiness(SunshineContext context, IUtenteCalendarioCorsoSerializer serializer)
         {
             _serializer = (UtenteCalendarioCorsoSerializer)serializer;
@@ -103,6 +107,13 @@ namespace WebAPI_CQRS.Business.UtentiCalendariCorsi
             response.ID = command.UtenteCalendarioCorso.ID;
             response.Success = true;
             response.Message = "UtenteCalendarioCorso salvato.";
+
+            Utente toEvent = command.UtenteCalendarioCorso.Utente;
+            if (toEvent == null)
+                toEvent = _context.Utenti.FirstOrDefault(u => u.ID == command.UtenteCalendarioCorso.UtenteID);
+            var onUtentePartecipaAlCorso = EventsHandler.GetInstance()._ucc.OnUtentePartecipaAlCorso;
+            if (onUtentePartecipaAlCorso != null)
+                onUtentePartecipaAlCorso(this,new UtentiEventHandler.MyEventArgs(_context, toEvent));            
             
             return response;
         }
