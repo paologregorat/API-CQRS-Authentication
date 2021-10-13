@@ -20,6 +20,7 @@ using Newtonsoft.Json;
 using WebAPI_CQRS.Business.Abstract;
 using WebAPI_CQRS.Business.CalendariCorsi;
 using WebAPI_CQRS.Business.Corsi;
+using WebAPI_CQRS.Business.Documenti;
 using WebAPI_CQRS.Business.Movimenti;
 using WebAPI_CQRS.Business.Operatori;
 using WebAPI_CQRS.Business.Personale;
@@ -36,6 +37,7 @@ using WebAPI_CQRS.Domain.Infrastructure.Authorization;
 using WebAPI_CQRS.Domain.Queries.Serializer;
 using WebAPI_CQRS.Domain.Queries.Serializer.CalendariCorsi;
 using WebAPI_CQRS.Domain.Queries.Serializer.Corsi;
+using WebAPI_CQRS.Domain.Queries.Serializer.Documenti;
 using WebAPI_CQRS.Domain.Queries.Serializer.Movimenti;
 using WebAPI_CQRS.Domain.Queries.Serializer.Strutture;
 using WebAPI_CQRS.Domain.Queries.Serializer.TipiCorsi;
@@ -126,6 +128,8 @@ namespace WebAPI_CQRS
             services.AddScoped<ICalendarioCorsoSerializer, CalendarioCorsoSerializer>();
             services.AddScoped<IUtentiCalendariCorsiBusiness, UtentiCalendariCorsiBusiness>();
             services.AddScoped<IUtenteCalendarioCorsoSerializer, UtenteCalendarioCorsoSerializer>();
+            services.AddScoped<IDocumentiBusiness, DocumentiBusiness>();
+            services.AddScoped<IDocumentoSerializer, DocumentoSerializer>();
 
             var file = File.ReadAllText("appsettings.json");
             dynamic dyn = JsonConvert.DeserializeObject(file);

@@ -33,6 +33,7 @@ namespace WebAPI_CQRS.Domain.Entity
         public IEnumerable<UtenteCorso> UtenteCorsi { get; }
         
         public IEnumerable<UtenteCalendarioCorso> UtenteCalendariCorsi { get; }
+        public IEnumerable<Movimento> Movimenti { get; }
 
     }
 }

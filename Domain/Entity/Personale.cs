@@ -22,5 +22,6 @@ namespace WebAPI_CQRS.Domain.Entity
         public string Cognome { get; set; }
 
         public IEnumerable<CalendarioCorso> CalendariCorsi { get; }
+        public IEnumerable<Movimento> Movimenti { get; }
     }
 }

@@ -26,12 +26,20 @@ namespace WebAPI_CQRS.Business.Movimenti
         }
         public List<MovimentoDTO> GetAll()
         {
-            return _serializer.SerializeList(_context.Movimenti.Include(c => c.TipoMovimento).ToList());
+            return _serializer.SerializeList(_context.Movimenti
+                .Include(c => c.TipoMovimento)
+                .Include(m => m.Utente)
+                .Include(m => m.Personale)
+                .ToList());
         }
 
         public MovimentoDTO GetById(Guid id)
         {
-            var entity = _context.Movimenti.Where(c => c.ID == id).Include(c => c.TipoMovimento).FirstOrDefault();
+            var entity = _context.Movimenti.Where(c => c.ID == id)
+                .Include(c => c.TipoMovimento)
+                .Include(m => m.Utente)
+                .Include(m => m.Personale)
+                .FirstOrDefault();
             return _serializer.SerializeSingle(entity);
         }
 

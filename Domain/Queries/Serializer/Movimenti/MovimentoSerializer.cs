@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Dynamic;
 using WebAPI_CQRS.Domain.Entity;
 using WebAPI_CQRS.Domain.Queries.Serializer.Utenti;
 
@@ -16,7 +17,11 @@ namespace WebAPI_CQRS.Domain.Queries.Serializer.Movimenti
                     ID = elem.ID,
                     Descrizione = elem.Descrizione,
                     TipoMovimentoID = elem.TipoMovimentoID,
-                    TipoMovimento = new TipoMovimentoDTO(elem.TipoMovimento) 
+                    TipoMovimento = new TipoMovimentoDTO(elem.TipoMovimento) ,
+                    Personale = elem.Personale?.Cognome + " " + elem.Personale?.Nome,
+                    Utente = elem.Utente?.Cognome + " " + elem.Personale?.Nome,
+                    Data = elem.Data.ToString("dd-MM-yyyy"),
+                    Importo =  elem.Importo
                 };
                 result.Add(serialized);
             }
@@ -30,7 +35,11 @@ namespace WebAPI_CQRS.Domain.Queries.Serializer.Movimenti
                 ID = toSerialize.ID,
                 Descrizione = toSerialize.Descrizione,
                 TipoMovimentoID = toSerialize.TipoMovimentoID,
-                TipoMovimento = new TipoMovimentoDTO(toSerialize.TipoMovimento) 
+                TipoMovimento = new TipoMovimentoDTO(toSerialize.TipoMovimento),
+                Personale = toSerialize.Personale?.Cognome + " " + toSerialize.Personale?.Nome,
+                Utente = toSerialize.Utente?.Cognome + " " + toSerialize.Personale?.Nome,
+                Data = toSerialize.Data.ToString("dd-MM-yyyy"),
+                Importo =  toSerialize.Importo
             };
             return result;
         }

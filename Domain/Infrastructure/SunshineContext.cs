@@ -100,6 +100,20 @@ namespace WebAPI_CQRS.Domain.Infrastructure
                     .IsRequired(false)
                     .OnDelete(DeleteBehavior.NoAction)
                     .HasConstraintName("movimento_tipomovimento_id_fk");
+                
+                entity.HasOne(d => d.Utente)
+                    .WithMany(p => p!.Movimenti)
+                    .HasForeignKey(d => d.UtenteID)
+                    .IsRequired(false)
+                    .OnDelete(DeleteBehavior.NoAction)
+                    .HasConstraintName("movimento_utente_id_fk");
+                
+                entity.HasOne(d => d.Personale)
+                    .WithMany(p => p!.Movimenti)
+                    .HasForeignKey(d => d.PersonaleID)
+                    .IsRequired(false)
+                    .OnDelete(DeleteBehavior.NoAction)
+                    .HasConstraintName("movimento_personale_id_fk");
             });
             
             modelBuilder.Entity<UtenteCorso>(entity =>

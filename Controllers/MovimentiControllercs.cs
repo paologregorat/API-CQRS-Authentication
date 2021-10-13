@@ -91,7 +91,11 @@ namespace WebAPI_CQRS.Controllers
                 var id = (Guid?) body.ID; 
                 var descrizione = (string?) body.Descrizione;
                 var tipoMovimentoID = (Guid)body.TipoMovimentoID;
-                Movimento item = new Movimento(id,tipoMovimentoID, descrizione);
+                var utenteID = (Guid?)body.UtenteID;
+                var personaleID = (Guid?)body.PersonaleID;
+                var data = (DateTime)body.Data;
+                var importo = (double?) body.Importo;
+                Movimento item = new Movimento(id,tipoMovimentoID, descrizione, utenteID, personaleID, data, importo);
                 var command = new SaveMovimentoCommand(item);
           
                 var handler = MovimentoCommandHandlerFactory.Build(command, _business);
@@ -122,7 +126,11 @@ namespace WebAPI_CQRS.Controllers
                 var id = (Guid?) body.ID; 
                 var descrizione = (string?) body.Descrizione;
                 var tipoMovimentoID = (Guid)body.TipoMovimentoID;
-                Movimento item = new Movimento(id,tipoMovimentoID, descrizione);
+                var utenteID = (Guid?)body.UtenteID;
+                var personaleID = (Guid?)body.PersonaleID;
+                var data = (DateTime)body.Data;
+                var importo = (double?) body.Importo;
+                Movimento item = new Movimento(id,tipoMovimentoID, descrizione, utenteID, personaleID, data, importo);
                 var command = new SaveMovimentoCommand(item);
           
                 var handler = MovimentoCommandHandlerFactory.Build(command, _business);

@@ -12,6 +12,9 @@ namespace WebAPI_CQRS.Domain.Entity
         public Guid TipoMovimentoID { get; set; }
         public TipoMovimentoDTO TipoMovimento { get; set; }
         
-      
+        public string Utente { get; set; }
+        public string Personale { get; set; }
+        public string Data { get; set; }
+        public double? Importo { get; set; }
     }
 }
